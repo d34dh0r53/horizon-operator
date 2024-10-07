@@ -125,6 +125,18 @@ CACHES = {
     },
 }
 
+WEBSSO_ENABLED = True
+WEBSSO_INITIAL_CHOICE = "OIDC"
+
+WEBSSO_CHOICES = (
+  ("credentials", _("Keystone Credentials")),
+  ("OIDC", _("OpenID Connect")),
+)
+
+WEBSSO_IDP_MAPPING = {
+  "OIDC": ("kcipaIDP", "openid"),
+}
+
 # If you use ``tox -e runserver`` for developments,then configure
 # SESSION_ENGINE to django.contrib.sessions.backends.signed_cookies
 # as shown below:
